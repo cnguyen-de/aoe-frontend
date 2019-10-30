@@ -1,0 +1,60 @@
+.player-details {
+  margin: 64px;
+  padding: 16px 16px 54px 16px;
+  max-width: 50%;
+  border-radius: 8px;
+  background: var(--contrast-color);
+  box-shadow: 0 2px 8px 2px rgba(128, 128, 128, 0.3);
+}
+.player-details-title {
+  font-size: 3rem;
+  margin: 16px;
+}
+.submit-button {
+  color: var(--contrast-color);
+  background: var(--primary-color);
+  float: right;
+}
+.player-overview {
+  margin: 64px;
+  max-width: 600px;
+}
+.player-overview-title {
+  font-size: 3rem;
+  margin: 6px;
+}
+.cards-controls {
+  padding-left: 6px;
+  padding-bottom: 8px;
+}
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards {
+  flex-grow: 1;
+  width: 33%;
+  max-width: 180px;
+}
+.player-card {
+  margin: 8px;
+  padding: 0 12px;
+  border-radius: 8px;
+  opacity: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 2px rgba(128, 128, 128, 0.3);
+  background: var(--contrast-color);
+}
+.player-card:hover {
+  opacity: 0.8;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.selected {
+  border: 3px solid #2d5c88;
+}
+.player-card-info {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

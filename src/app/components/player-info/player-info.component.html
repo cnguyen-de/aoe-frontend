@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="player-details">
+    <h1 class="player-details-title">Details</h1>
+    <mat-list role="list">
+      <mat-list-item role="listitem"><b>Real Name:</b> &nbsp;{{ selectedPlayer.realName }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"><b>Player Name:</b> &nbsp;{{ selectedPlayer.playerName }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"><b>Asset:</b> &nbsp;{{ selectedPlayer.asset }}</mat-list-item>
+    </mat-list>
+    <button mat-raised-button class="submit-button" (click)="submit()" [disabled]="submitButtonClicked || this.selectedPlayer.realName === ''">Submit</button>
+  </div>
+
+  <div class="player-overview">
+    <h1 class="player-overview-title">Overview</h1>
+    <div class="cards-controls">
+      <button mat-raised-button class="menu-button" [matMenuTriggerFor]="menu"
+              matTooltip="Sort after real name" matTooltipPosition="above">
+        <i class="material-icons" style="margin-bottom:2px">sort</i>
+      </button>
+      <mat-menu #menu="matMenu" style="border-radius: 6px; height: 110%">
+        <button mat-menu-item class="menu-item" (click)="sortAsc()">Ascending</button>
+        <button mat-menu-item class="menu-item" (click)="sortDesc()">Descending</button>
+      </mat-menu>
+    </div>
+
+    <div class="cards-display">
+      <div class="cards-grid">
+        <div class="cards" *ngFor="let player of players">
+          <div class="player-card" (click)="selectPlayer(player)" [ngClass]="{selected: player === selectedPlayer}">
+              <p class="player-card-info"><b>{{ player.realName }}</b></p>
+              <mat-divider></mat-divider>
+              <p class="player-card-info">{{ player.playerName }}</p>
+              <mat-divider></mat-divider>
+              <p class="player-card-info">{{ player.asset }}</p>
+              <mat-divider></mat-divider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: normal;
+  src: url('assets/fonts/Nunito-Regular.ttf');
+}
+
+:root {
+  --font-family: "Nunito";
+  --primary-color: #2d5c88;
+  --secondary-color: #ff5533;
+  --background-color: #efefef;
+  --contrast-color: #ffffff;
+}
+html, body {
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
