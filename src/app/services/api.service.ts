@@ -53,11 +53,7 @@ export class ApiService {
   }
 
   getData() {
-    return this.httpClient.get('https://randomuser.me/api/').pipe(
-      map((res) => {
-        return this.data;
-      })
-    );
+    return this.data;
   }
 
   submit(player: Player) {

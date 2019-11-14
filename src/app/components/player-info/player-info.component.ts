@@ -9,7 +9,7 @@ import {ApiService} from '../../services/api.service';
 })
 export class PlayerInfoComponent implements OnInit {
 
-  players: Player[];
+  players: Player[] = [];
   selectedPlayer: Player = {
     realName: '',
     playerName: '',
@@ -20,10 +20,9 @@ export class PlayerInfoComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getData().subscribe(data => {
-      // console.log(data);
-      this.players = data;
-    });
+    setTimeout(() => {
+      this.players = this.apiService.getData();
+    }, 1000);
   }
 
   selectPlayer(player) {
@@ -40,6 +39,11 @@ export class PlayerInfoComponent implements OnInit {
 
   submit() {
     this.submitButtonClicked = true;
+    setTimeout(() => {
+      this.apiService.displaySnackbar('Data successfully submitted');
+      this.submitButtonClicked = false;
+    }, 500);
+    /*
     this.apiService.submit(this.selectedPlayer).subscribe(
       success => {
         this.apiService.displaySnackbar('Data successfully submitted');
@@ -51,6 +55,7 @@ export class PlayerInfoComponent implements OnInit {
         this.submitButtonClicked = false;
       }
     );
+    */
   }
 
 

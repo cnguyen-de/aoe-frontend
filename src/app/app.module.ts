@@ -12,7 +12,7 @@ import {
   MatGridListModule,
   MatIconModule,
   MatListModule,
-  MatMenuModule,
+  MatMenuModule, MatProgressSpinnerModule,
   MatSnackBarModule,
   MatTooltipModule
 } from '@angular/material';
@@ -33,7 +33,8 @@ import {
     MatButtonModule,
     MatMenuModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     ApiService

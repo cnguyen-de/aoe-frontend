@@ -24,6 +24,9 @@
       </mat-menu>
     </div>
 
+    <div class="loading-icon" *ngIf="players.length === 0">
+      <mat-spinner diameter="32" style="margin:0 auto;"></mat-spinner>
+    </div>
     <div class="cards-display">
       <div class="cards-grid">
         <div class="cards" *ngFor="let player of players">
